@@ -117,6 +117,118 @@
         section .stat-item p{
             margin: 0;
         }
+        /* ===== SIDEBAR FILTER ===== */
+
+.catalog{
+    display: flex;
+    justify-content: flex-start;
+    padding: 40px;
+    background: #f5f7fa;
+}
+
+.filter-sidebar{
+    width: 280px;
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.filter-sidebar h3{
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.filter-group{
+    margin-bottom: 25px;
+}
+
+.filter-group label{
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.filter-group input[type="text"]{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.filter-group select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.budget-value{
+    color: #16a34a;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.filter-group input[type="range"]{
+    width: 100%;
+}
+
+.range-label{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+}
+
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tags span{
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+    background: #f8fafc;
+}
+
+.tags span:hover{
+    background: #d1fae5;
+    border-color: #10b981;
+}
+
+.checkbox-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-group label{
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.btn-filter{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #10b981;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Poppins';
+}
+
+.btn-filter:hover{
+    background: #059669;
+}
     </style>
 </head>
 <body>
@@ -167,12 +279,87 @@
             <p>Rating Pengguna</p>
         </div>
     </section>
-        
+    <!-- SIDEBAR FILTER -->
+<section class="catalog">
+    <aside class="filter-sidebar">
+        <h3>🔎 Pencarian & Filter</h3>
+
+        <!-- Cari Laptop -->
+        <div class="filter-group">
+            <label>Cari Laptop</label>
+            <input type="text" placeholder="Merk / Model / Spesifikasi...">
+        </div>
+
+        <!-- Budget -->
+        <div class="filter-group">
+            <label>Budget Maksimal</label>
+            <p class="budget-value">Rp 15.000.000</p>
+            <input type="range" min="3000000" max="30000000" value="15000000">
+            <div class="range-label">
+                <span>Rp 3 Juta</span>
+                <span>Rp 30 Juta</span>
+            </div>
+        </div>
+
+        <!-- Merk -->
+        <div class="filter-group">
+            <label>Merk</label>
+            <select>
+                <option>Semua Merk</option>
+                <option>ASUS</option>
+                <option>Acer</option>
+                <option>Lenovo</option>
+                <option>HP</option>
+                <option>Dell</option>
+                <option>MSI</option>
+            </select>
+        </div>
+
+        <!-- Jenis Penggunaan -->
+        <div class="filter-group">
+            <label>Jenis Penggunaan</label>
+
+            <div class="tags">
+                <span>Tugas Harian</span>
+                <span>Kuliah/Kerja</span>
+                <span>Desain/Video</span>
+                <span>Gaming</span>
+                <span>Programming</span>
+            </div>
+        </div>
+
+        <!-- Spesifikasi -->
+        <div class="filter-group">
+            <label>Spesifikasi Minimum</label>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox"> Minimal RAM 8GB</label>
+                <label><input type="checkbox"> SSD Storage</label>
+                <label><input type="checkbox"> Windows 11</label>
+                <label><input type="checkbox"> Dedicated GPU</label>
+            </div>
+        </div>
+
+        <!-- Ukuran Layar -->
+        <div class="filter-group">
+            <label>Ukuran Layar</label>
+
+            <div class="tags">
+                <span>13"</span>
+                <span>14"</span>
+                <span>15.6"</span>
+                <span>16"</span>
+                <span>17"</span>
+            </div>
+        </div>
+
+        <button class="btn-filter">
+            Tampilkan Laptop
+        </button>
+    </aside>
+</section>
     </main>
 
 <!-- BAGIAN FOOTER/BAWAH -->
-    <footer>
-        
-    </footer>
 </body>
 </html>
