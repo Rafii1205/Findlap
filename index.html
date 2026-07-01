@@ -440,6 +440,74 @@
     line-height:1.7;
     font-size:14px;
 }
+        /* =====================
+   FOOTER
+===================== */
+
+.footer{
+    background:#0f172a;
+    color:white;
+    padding:40px;
+}
+
+.footer-container{
+    max-width:1400px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.footer-brand h3{
+    margin:0;
+    font-size:24px;
+}
+
+.footer-brand p{
+    margin-top:10px;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.footer-menu{
+    display:flex;
+    gap:25px;
+}
+
+.footer-menu a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+
+.footer-menu a:hover{
+    color:white;
+}
+
+.footer-social{
+    display:flex;
+    gap:12px;
+}
+
+.footer-social a{
+    width:40px;
+    height:40px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#1e293b;
+    border-radius:10px;
+
+    text-decoration:none;
+    font-size:18px;
+}
+
+.footer-social a:hover{
+    background:#334155;
+}
     </style>
 </head>
 <body>
@@ -831,5 +899,34 @@
     </main>
 
 <!-- BAGIAN FOOTER/BAWAH -->
+    <footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+            <h3>findlap</h3>
+            <p>
+                © 2025 findlap.
+                Membantu kamu menemukan laptop impian
+                sesuai kebutuhan dan budget.
+            </p>
+        </div>
+
+        <div class="footer-menu">
+            <a href="#">Cari</a>
+            <a href="#">Tips</a>
+            <a href="#">Tentang</a>
+            <a href="#">Kontak</a>
+        </div>
+
+        <div class="footer-social">
+            <a href="#">📘</a>
+            <a href="#">📸</a>
+            <a href="#">▶️</a>
+        </div>
+
+    </div>
+
+    </footer>
 </body>
 </html>
