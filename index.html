@@ -229,6 +229,146 @@
 .btn-filter:hover{
     background: #059669;
 }
+/* AGAR FILTER KIRI & KATALOG KANAN BERDAMPINGAN */
+.catalog{
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
+}
+
+/* BAGIAN KANAN */
+.catalog-content{
+    flex:1;
+}
+
+/* HEADER */
+.catalog-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.catalog-header h2{
+    margin:0;
+}
+
+.catalog-header p{
+    margin:5px 0 0;
+    color:#777;
+    font-size:14px;
+}
+
+.catalog-header select{
+    padding:10px 15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+}
+
+/* GRID */
+.laptop-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+/* CARD */
+.laptop-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid #e5e7eb;
+    position:relative;
+}
+
+.laptop-image{
+    height:150px;
+    background:#edf2f7;
+}
+
+.card-body{
+    padding:15px;
+}
+
+.card-body h3{
+    margin:5px 0;
+    font-size:18px;
+}
+
+.price{
+    color:#10b981;
+    font-size:24px;
+    font-weight:700;
+    margin:10px 0;
+}
+
+.card-body ul{
+    display:block;
+    padding-left:18px;
+    margin:0;
+}
+
+.card-body ul li{
+    list-style:disc;
+    margin-bottom:5px;
+    color:#555;
+    font-size:13px;
+}
+
+.card-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:15px;
+}
+
+.card-tags span{
+    background:#f1f5f9;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.card-body button{
+    width:100%;
+    margin-top:15px;
+    padding:12px;
+    border:none;
+    border-radius:12px;
+    background:#d1fae5;
+    color:#047857;
+    font-weight:600;
+    cursor:pointer;
+    font-family:'Poppins';
+}
+
+/* BADGE */
+.badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    padding:5px 12px;
+    border-radius:20px;
+    color:white;
+    font-size:11px;
+    font-weight:600;
+}
+
+.best{
+    background:#22c55e;
+}
+
+.hemat{
+    background:#16a34a;
+}
+
+.bisnis{
+    background:#0f766e;
+}
+
+.baru{
+    background:#9333ea;
+}
     </style>
 </head>
 <body>
@@ -357,6 +497,192 @@
             Tampilkan Laptop
         </button>
     </aside>
+    <!-- KATALOG LAPTOP -->
+<div class="catalog-content">
+
+    <div class="catalog-header">
+        <div>
+            <h2>Katalog Laptop Rekomendasi</h2>
+            <p>Menampilkan 9 laptop</p>
+        </div>
+
+        <select>
+            <option>Paling Relevan</option>
+            <option>Harga Termurah</option>
+            <option>Harga Tertinggi</option>
+        </select>
+    </div>
+
+    <div class="laptop-grid">
+
+        <!-- CARD 1 -->
+        <div class="laptop-card">
+            <span class="badge best">TERLARIS</span>
+
+            <div class="laptop-image"></div>
+
+            <div class="card-body">
+                <small>ASUS</small>
+                <h3>VivoBook 14 A1404Z</h3>
+
+                <div class="price">
+                    Rp 7.499.000
+                </div>
+
+                <ul>
+                    <li>Intel Core i5-1235U</li>
+                    <li>8GB DDR4 • 512GB SSD</li>
+                    <li>14" FHD IPS</li>
+                </ul>
+
+                <div class="card-tags">
+                    <span>Kuliah/Kerja</span>
+                    <span>Tugas Harian</span>
+                </div>
+
+                <button>Detail Selengkapnya →</button>
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="laptop-card">
+            <span class="badge hemat">HEMAT</span>
+
+            <div class="laptop-image"></div>
+
+            <div class="card-body">
+                <small>LENOVO</small>
+                <h3>IdeaPad Slim 3i</h3>
+
+                <div class="price">
+                    Rp 6.299.000
+                </div>
+
+                <ul>
+                    <li>Intel Core i3-1215U</li>
+                    <li>8GB DDR4 • 256GB SSD</li>
+                    <li>15.6" FHD TN</li>
+                </ul>
+
+                <div class="card-tags">
+                    <span>Tugas Harian</span>
+                </div>
+
+                <button>Detail Selengkapnya →</button>
+            </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="laptop-card">
+            <div class="laptop-image"></div>
+
+            <div class="card-body">
+                <small>HP</small>
+                <h3>14s-dq5000TU</h3>
+
+                <div class="price">
+                    Rp 5.999.000
+                </div>
+
+                <ul>
+                    <li>Intel Core i5-1235U</li>
+                    <li>8GB DDR4 • 512GB SSD</li>
+                    <li>14" FHD IPS</li>
+                </ul>
+
+                <div class="card-tags">
+                    <span>Tugas Harian</span>
+                </div>
+
+                <button>Detail Selengkapnya →</button>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="laptop-card">
+            <div class="laptop-image"></div>
+
+            <div class="card-body">
+                <small>ACER</small>
+                <h3>Aspire 5 A515-57</h3>
+
+                <div class="price">
+                    Rp 8.499.000
+                </div>
+
+                <ul>
+                    <li>Intel Core i5-12450H</li>
+                    <li>8GB DDR4 • 512GB SSD</li>
+                    <li>15.6" FHD IPS</li>
+                </ul>
+
+                <div class="card-tags">
+                    <span>Programming</span>
+                </div>
+
+                <button>Detail Selengkapnya →</button>
+            </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="laptop-card">
+            <span class="badge bisnis">BISNIS</span>
+
+            <div class="laptop-image"></div>
+
+            <div class="card-body">
+                <small>LENOVO</small>
+                <h3>ThinkPad E14 Gen 4</h3>
+
+                <div class="price">
+                    Rp 12.499.000
+                </div>
+
+                <ul>
+                    <li>Ryzen 5 5625U</li>
+                    <li>16GB DDR4 • 512GB SSD</li>
+                    <li>14" FHD IPS</li>
+                </ul>
+
+                <div class="card-tags">
+                    <span>Programming</span>
+                </div>
+
+                <button>Detail Selengkapnya →</button>
+            </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="laptop-card">
+            <span class="badge baru">BARU</span>
+
+            <div class="laptop-image"></div>
+
+            <div class="card-body">
+                <small>MSI</small>
+                <h3>Modern 14 C12MO</h3>
+
+                <div class="price">
+                    Rp 9.299.000
+                </div>
+
+                <ul>
+                    <li>Intel Core i5-1235U</li>
+                    <li>8GB DDR4 • 512GB SSD</li>
+                    <li>14" FHD IPS</li>
+                </ul>
+
+                <div class="card-tags">
+                    <span>Desain/Video</span>
+                </div>
+
+                <button>Detail Selengkapnya →</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 </section>
     </main>
 
