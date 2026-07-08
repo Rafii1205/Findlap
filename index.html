@@ -282,8 +282,18 @@
 }
 
 .laptop-image{
-    height:150px;
+    height:180px;
     background:#edf2f7;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.laptop-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 .card-body{
@@ -658,7 +668,9 @@
         <div class="laptop-card">
             <span class="badge best">TERLARIS</span>
 
-            <div class="laptop-image"></div>
+            <div class="laptop-image">
+                <img src="images/vivobooka14.jpg" alt="ASUS VivoBook 14 A1404Z">
+                </div>
 
             <div class="card-body">
                 <small>ASUS</small>
