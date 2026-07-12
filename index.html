@@ -167,25 +167,28 @@
                         </p>
                     </div>
 
-                    <select id="sortSelect" onchange="renderCards()">
+                    <select id="badgeFilter" onchange="applyFilters()">
 
-                        <option value="relevance">
-                            Paling Relevan
+                        <option value="">
+                            Semua
                         </option>
 
-                        <option value="price-asc">
-                            Harga Termurah
+                        <option value="hemat">
+                            HEMAT 
                         </option>
 
-                        <option value="price-desc">
-                            Harga Tertinggi
+                        <option value="bisnis">
+                            BISNIS
+                        </option>
+                        <option value="premium">
+                            PREMIUM
                         </option>
 
                     </select>
 
                 </div>
                 <div id="activeTags"></div>
-
+                <div id="emptyset"></div>
                 <div id="laptopGrid" class="laptop-grid"></div>
 
             </div>

@@ -24,7 +24,7 @@ const laptops = [
     storage: "256GB SSD",
     display: '15.6" FHD',
     badge: "HEMAT",
-    badgeClass:"hemat",
+    badgeClass: "hemat",
     use: ["Tugas Harian"],
   },
   {
@@ -38,7 +38,7 @@ const laptops = [
     storage: "512GB SSD",
     display: '14" FHD IPS',
     badge: "HEMAT",
-    badgeClass:"hemat",
+    badgeClass: "hemat",
     use: ["Kuliah/Kerja"],
   },
   {
@@ -54,7 +54,7 @@ const laptops = [
     badge: "REKOMENDASI",
     badgeClass: "best",
     use: ["Programming"],
-},
+  },
   {
     id: 5,
     brand: "Lenovo",
@@ -81,7 +81,7 @@ const laptops = [
     display: '14" FHD IPS',
     badge: "BARU",
     badgeClass: "baru",
-    use: ["Desain/Video"],
+    use: ["Kuliah/Kerja", "Programming"],
   },
   {
     id: 7,
@@ -95,9 +95,9 @@ const laptops = [
     display: '14" FHD',
     badge: "HEMAT",
     badgeClass: "hemat",
-    use: ["Tugas Harian","Kuliah/Kerja"]
-},
-{
+    use: ["Tugas Harian", "Kuliah/Kerja"],
+  },
+  {
     id: 8,
     brand: "Acer",
     name: "Aspire Lite AL14",
@@ -109,9 +109,9 @@ const laptops = [
     display: '14" FHD IPS',
     badge: "HEMAT",
     badgeClass: "hemat",
-    use: ["Tugas Harian"]
-},
-{
+    use: ["Tugas Harian"],
+  },
+  {
     id: 9,
     brand: "Lenovo",
     name: "IdeaPad Slim 5",
@@ -123,9 +123,9 @@ const laptops = [
     display: '14" WUXGA IPS',
     badge: "BARU",
     badgeClass: "baru",
-    use: ["Programming","Kuliah/Kerja"]
-},
-{
+    use: ["Programming", "Kuliah/Kerja"],
+  },
+  {
     id: 10,
     brand: "HP",
     name: "HP Pavilion 14",
@@ -137,9 +137,9 @@ const laptops = [
     display: '14" FHD IPS',
     badge: "TERLARIS",
     badgeClass: "best",
-    use: ["Programming","Kuliah/Kerja"]
-},
-{
+    use: ["Programming", "Kuliah/Kerja"],
+  },
+  {
     id: 11,
     brand: "Dell",
     name: "Inspiron 14 5430",
@@ -151,9 +151,9 @@ const laptops = [
     display: '14" FHD+',
     badge: "BISNIS",
     badgeClass: "bisnis",
-    use: ["Kuliah/Kerja","Programming"]
-},
-{
+    use: ["Kuliah/Kerja", "Programming"],
+  },
+  {
     id: 12,
     brand: "MSI",
     name: "GF63 Thin",
@@ -165,9 +165,9 @@ const laptops = [
     display: '15.6" FHD 144Hz',
     badge: "TERLARIS",
     badgeClass: "best",
-    use: ["Gaming","Programming"]
-},
-{
+    use: ["Gaming", "Programming"],
+  },
+  {
     id: 13,
     brand: "ASUS",
     name: "TUF Gaming F15",
@@ -179,9 +179,9 @@ const laptops = [
     display: '15.6" FHD 144Hz',
     badge: "TERLARIS",
     badgeClass: "best",
-    use: ["Gaming","Desain/Video"]
-},
-{
+    use: ["Gaming", "Desain/Video"],
+  },
+  {
     id: 14,
     brand: "Acer",
     name: "Nitro V15",
@@ -193,9 +193,9 @@ const laptops = [
     display: '15.6" FHD 144Hz',
     badge: "BARU",
     badgeClass: "baru",
-    use: ["Gaming","Programming"]
-},
-{
+    use: ["Gaming", "Programming"],
+  },
+  {
     id: 15,
     brand: "Lenovo",
     name: "LOQ 15IRH8",
@@ -207,9 +207,9 @@ const laptops = [
     display: '15.6" FHD 144Hz',
     badge: "TERLARIS",
     badgeClass: "best",
-    use: ["Gaming","Desain/Video"]
-},
-{
+    use: ["Gaming", "Desain/Video"],
+  },
+  {
     id: 16,
     brand: "ASUS",
     name: "Zenbook 14 OLED",
@@ -221,8 +221,8 @@ const laptops = [
     display: '14" OLED 2.8K',
     badge: "PREMIUM",
     badgeClass: "premium",
-    use: ["Kuliah/Kerja","Desain/Video"]
-}
+    use: ["Kuliah/Kerja", "Desain/Video"],
+  },
 ];
 
 let filtered = [...laptops];
@@ -233,17 +233,21 @@ function rupiah(num) {
 }
 
 function renderCards() {
-//   const badgeClass =
-//     laptop.badge === "TERLARIS"
-//       ? "best"
-//       : laptop.badge === "HEMAT"
-//         ? "hemat"
-//         : laptop.badge === "BISNIS"
-//           ? "bisnis"
-//           : laptop.badge === "BARU"
-//             ? "baru"
-//             : "";
   const grid = document.getElementById("laptopGrid");
+  const emptyEl = document.getElementById("emptyset");
+
+  if (filtered.length === 0) {
+    document.getElementById("resultCount").textContent = "Menampilkan 0 laptop";
+    grid.innerHTML = "";
+
+    if (emptyEl) {
+      emptyEl.style.display = "block";
+      emptyEl.textContent = "Tidak ada laptop yang sesuai dengan filter.";
+    }
+    return;
+  } else {
+    if (emptyEl) emptyEl.style.display = "none";
+  }
 
   document.getElementById("resultCount").textContent =
     `Menampilkan ${filtered.length} laptop`;
@@ -299,6 +303,7 @@ function applyFilters() {
   const search = document.getElementById("searchInput").value.toLowerCase();
 
   const brand = document.getElementById("brandFilter").value;
+  const badge = document.getElementById("badgeFilter").value;
 
   const activeChips = [...document.querySelectorAll(".chip.active")].map(
     (chip) => chip.textContent.trim(),
@@ -321,13 +326,8 @@ function applyFilters() {
       activeScreens.length === 0 ||
       activeScreens.some((screen) => laptop.display.includes(screen));
 
-    return (
-      matchSearch &&
-      matchBrand &&
-      matchBudget &&
-      matchUse &&
-      matchScreen
-    );
+      const matchBadge = badge === "" || laptop.badgeClass === badge;
+    return matchSearch && matchBrand && matchBudget && matchUse && matchScreen && matchBadge;
   });
   renderCards();
 }
