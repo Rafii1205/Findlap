@@ -66,6 +66,7 @@ const laptops = [
     storage: "512GB SSD",
     display: '14" FHD IPS',
     badge: "BISNIS",
+    badgeClass: "bisnis",
     use: ["Programming", "Kuliah/Kerja"],
   },
   {
@@ -79,6 +80,7 @@ const laptops = [
     storage: "512GB SSD",
     display: '14" FHD IPS',
     badge: "BARU",
+    badgeClass: "baru",
     use: ["Desain/Video"],
   },
   {
