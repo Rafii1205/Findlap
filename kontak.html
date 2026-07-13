@@ -1,105 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Findlap</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-        rel="stylesheet">
-        <link rel="stylesheet" href="assets/kontak.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hubungi tim Findlap.">
+  <title>Hubungi Findlap</title>
+  <link rel="stylesheet" href="assets/css/kontak.css">
 </head>
-
 <body>
-    <!-- BAGIAN NAVBAR -->
-    <header>
-        <a href="index.html"><h1>Findlap</h1></a>
-        <nav>
-            <ul>
-                <li><a href="index.html#katalog">Cari Laptop</a></li>
-                <li><a href="index.html#guide">Tips Memilih</a></li>
-                <li><a href="tentang.html">Tentang</a></li>
-                <li><a href="kontak.html">Hubungi</a></li>
-                <li><a href="index.html#katalog" class="btn">Mulai Cari</a></li>
-            </ul>
-
-        </nav>
-    </header>
-    <section class="about-hero">
-    <h1>Hubungi Kami</h1>
-    <p>
-        Ada pertanyaan atau saran mengenai FindLap?
-        Jangan ragu untuk menghubungi kami melalui form di bawah ini.
-    </p>
-</section>
-
-<section class="contact-section">
-
-    <div class="contact-form">
-
-        <h2>Kirim Pesan</h2>
-
-        <form>
-
-            <label>Nama</label>
-            <input type="text" placeholder="Masukkan nama">
-
-            <label>Email</label>
-            <input type="email" placeholder="Masukkan email">
-
-            <label>Pesan</label>
-            <textarea placeholder="Tulis pesan..." rows="6"></textarea>
-
-            <button type="submit">Kirim Pesan</button>
-
-        </form>
-
-    </div>
-
-    <div class="contact-info">
-
-        <h2>Informasi Kontak</h2>
-
-        <p>📧 Email : findlap@gmail.com</p>
-        <p>📱 Instagram : @findlap.id</p>
-        <p>💻 GitHub : github.com/FindLap</p>
-        <p>📍 Indonesia</p>
-
-    </div>
-
-</section>
-  
-<footer class="footer">
-
-        <div class="footer-container">
-
-            <div class="footer-brand">
-                <h3>findlap</h3>
-                <p>
-                    © 2025 findlap.
-                    Membantu kamu menemukan laptop impian
-                    sesuai kebutuhan dan budget.
-                </p>
-            </div>
-
-            <div class="footer-menu">
-                <a href="index.html">Cari</a>
-                <a href="index.html#guide">Tips</a>
-                <a href="tentang.html">Tentang</a>
-                <a href="kontak.html">Kontak</a>
-            </div>
-
-            <div class="footer-social">
-                <a href="#">📘</a>
-                <a href="#">📸</a>
-                <a href="#">▶️</a>
-            </div>
-
-        </div>
-
-    </footer>
-
+  <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><span class="brand-mark">F</span><span>find<span>lap</span></span></a><button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button><nav class="main-nav" id="mainNav"><a href="index.html#katalog">Cari Laptop</a><a href="index.html#promo">Promo Mingguan</a><a href="index.html#guide">Tips Memilih</a><a href="tentang.html">Tentang</a><a class="active" href="kontak.html">Hubungi</a></nav><a class="button button-dark nav-cta" href="index.html#katalog">Mulai Cari →</a></div></header>
+  <main>
+    <section class="contact-hero"><div class="container"><span class="kicker">KAMI SIAP MEMBANTU</span><h1>Ada yang ingin<br><em>ditanyakan?</em></h1><p>Sampaikan pertanyaan, saran, atau masukanmu. Kami akan membacanya dan menjawab secepatnya.</p></div></section>
+    <section class="contact-section"><div class="container contact-grid"><div class="contact-form-card"><span class="kicker">KIRIM PESAN</span><h2>Ngobrol dengan tim Findlap</h2><p class="subtext">Isi form singkat di bawah ini. Form ini tersimpan di perangkatmu sebagai demo dan akan memberikan konfirmasi setelah dikirim.</p><form id="contactForm" novalidate><label for="contactName">Nama lengkap</label><input id="contactName" type="text" placeholder="Contoh: Andi Pratama" required><label for="contactEmail">Email</label><input id="contactEmail" type="email" placeholder="nama@email.com" required><label for="contactMessage">Pesan</label><textarea id="contactMessage" rows="6" placeholder="Tulis pertanyaan atau saranmu..." required></textarea><button class="button button-primary" type="submit">Kirim pesan <span>→</span></button></form></div><div class="contact-side"><div class="info-card"><span class="info-icon">✉</span><h3>Email</h3><p>findlap@gmail.com</p><a href="mailto:findlap@gmail.com">Kirim email →</a></div><div class="info-card"><span class="info-icon">◎</span><h3>Instagram</h3><p>@findlap.id</p><a href="https://instagram.com" target="_blank" rel="noreferrer">Ikuti kami →</a></div><div class="info-card help-card"><span class="info-icon">?</span><h3>Butuh rekomendasi cepat?</h3><p>Coba fitur Laptop Finder untuk mendapatkan pilihan personal berdasarkan budget dan kebutuhanmu.</p><a href="index.html#finder">Buka Laptop Finder →</a></div></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-wrap"><div><a class="brand" href="index.html"><span class="brand-mark">F</span><span>find<span>lap</span></span></a><p>Teman memilih laptop yang lebih tepat.</p></div><div class="footer-links"><a href="index.html#katalog">Katalog</a><a href="index.html#promo">Promo</a><a href="tentang.html">Tentang</a></div><span class="copyright">© 2026 findlap</span></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

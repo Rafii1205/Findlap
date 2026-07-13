@@ -1,307 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>findlap</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Findlap membantu kamu menemukan laptop yang tepat sesuai kebutuhan dan budget.">
+  <title>Findlap — Cari Laptop Sesuai Kebutuhan</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
-    <!-- BAGIAN NAVBAR-->
-    <header>
-        <a href="index.html"><h1>Findlap</h1></a>
-        <nav>
-            <ul>
-                <li><a href="#katalog">Cari Laptop</a></li>
-                <li><a href="#guide">Tips Memilih</a></li>
-                <li><a href="tentang.html">Tentang</a></li>
-                <li><a href="kontak.html">Hubungi</a></li>
-                <li><a href="#katalog" class="btn">Mulai Cari</a></li>
-            </ul>
-
-        </nav>
-    </header>
-
-    <!-- BAGIAN ISI -->
-    <main>
-        <!-- HERO SECTION -->
-        <section class="hero">
-            <p class="judul">Untuk Pelajar dan Mahasiswa</p>
-            <h1>Temukan Laptop <span>Impianmu</span><br>
-                Sesuai Budget & Kebutuhan!</h1>
-            <p class="deskripsi">Membantu Mahasiswa,pelajar & umum Mencari laptop yang tepat,sesuai kebutuhan</p>
-            <div class="button">
-                <a href="#katalog" class="mulai">Mulai Cari sekarang</a></button>
-                <a href="#guide" class="pilih">Tips Memilih Laptop</a>
-            </div>
-        </section>
-        <!-- BAGIAN STATISTIK -->
-        <section class="stats">
-            <div class="stat-item">
-                <p>200+</p>
-                <p>Model Laptop</p>
-            </div>
-            <div class="stat-item">
-                <p>15+</p>
-                <p>Merk Terpercaya</p>
-            </div>
-            <div class="stat-item">
-                <p>50rb+</p>
-                <p>Pengguna Terbantu</p>
-            </div>
-            <div class="stat-item">
-                <p>4.9</p>
-                <p>Rating Pengguna</p>
-            </div>
-        </section>
-        <!-- SIDEBAR FILTER -->
-        <section class="catalog" id="katalog">
-            <aside class="filter-sidebar">
-                <h3>🔎 Pencarian & Filter</h3>
-
-                <!-- Cari Laptop -->
-                <div class="filter-group">
-                    <label>Cari Laptop</label>
-                    <input type="text" id="searchInput" placeholder="Merk / Model / Spesifikasi..."
-                        oninput="applyFilters()">
-                </div>
-
-                <!-- Budget -->
-                <div class="filter-group">
-                    <label>Budget Maksimal</label>
-                    <p class="budget-value" id="budgetDisplay">
-                        Rp 15.000.000
-                    </p>
-
-                    <input type="range" id="budgetSlider" min="3000000" max="30000000" value="15000000"
-                        oninput="updateBudget(this.value)">
-                </div>
-
-                <!-- Merk -->
-                <div class="filter-group">
-                    <label>Merk</label>
-                    <select id="brandFilter" onchange="applyFilters()">
-                        <option value="">Semua Merk</option>
-                        <option value="ASUS">ASUS</option>
-                        <option value="Lenovo">Lenovo</option>
-                        <option value="HP">HP</option>
-                        <option value="Acer">Acer</option>
-                        <option value="MSI">MSI</option>
-                        <option value="Dell">Dell</option>
-                    </select>
-                </div>
-
-                <!-- Jenis Penggunaan -->
-                <label class="jenispenggunaan"> Jenis Penggunaan</label>
-                <div class="tags" id="useChips">
-
-                    <span class="chip" onclick="toggleChip(this)">
-                        Tugas Harian
-                    </span>
-
-                    <span class="chip" onclick="toggleChip(this)">
-                        Kuliah/Kerja
-                    </span>
-
-                    <span class="chip" onclick="toggleChip(this)">
-                        Desain/Video
-                    </span>
-
-                    <span class="chip" onclick="toggleChip(this)">
-                        Gaming
-                    </span>
-
-                    <span class="chip" onclick="toggleChip(this)">
-                        Programming
-                    </span>
-
-                </div>
-
-                <!-- Spesifikasi -->
-                
-                <!-- Ukuran Layar -->
-                <div class="tags" id="screenChips">
-
-                    <span class="screen-chip" onclick="toggleScreen(this)">
-                        13"
-                    </span>
-
-                    <span class="screen-chip" onclick="toggleScreen(this)">
-                        14"
-                    </span>
-
-                    <span class="screen-chip" onclick="toggleScreen(this)">
-                        15.6"
-                    </span>
-
-                    <span class="screen-chip" onclick="toggleScreen(this)">
-                        16"
-                    </span>
-
-                    <span class="screen-chip" onclick="toggleScreen(this)">
-                        17"
-                    </span>
-
-                </div>
-
-                <button class="btn-filter">
-                    Tampilkan Laptop
-                </button>
-            </aside>
-            <!-- KATALOG LAPTOP -->
-            <div class="catalog-content">
-
-                <div class="catalog-header">
-
-                    <div>
-                        <h2>Katalog Laptop Rekomendasi</h2>
-                        <p id="resultCount">
-                            Menampilkan 12 laptop
-                        </p>
-                    </div>
-
-                    <select id="badgeFilter" onchange="applyFilters()">
-
-                        <option value="">
-                            Semua
-                        </option>
-
-                        <option value="hemat">
-                            HEMAT 
-                        </option>
-
-                        <option value="bisnis">
-                            BISNIS
-                        </option>
-                        <option value="premium">
-                            PREMIUM
-                        </option>
-
-                    </select>
-
-                </div>
-                <div id="activeTags"></div>
-                <div id="emptyset"></div>
-                <div id="laptopGrid" class="laptop-grid"></div>
-
-            </div>
-        </section>
-        <!-- PANDUAN MEMILIH LAPTOP -->
-        <section class="guide-section" id="guide">
-
-            <div class="guide-header">
-                <span class="guide-label">💡 TIPS & PANDUAN</span>
-                <h2>Panduan Memilih Laptop yang Tepat</h2>
-            </div>
-
-            <div class="guide-grid">
-
-                <div class="guide-card">
-                    <div class="guide-icon">💰</div>
-                    <h3>Tentukan Budget Dulu</h3>
-                    <p>
-                        Sebelum memilih, tentukan budget maksimal.
-                        Laptop Rp 5–8 juta biasanya sudah cukup
-                        untuk tugas kuliah sehari-hari.
-                    </p>
-                </div>
-
-                <div class="guide-card">
-                    <div class="guide-icon">🎯</div>
-                    <h3>Sesuaikan dengan Kebutuhan</h3>
-                    <p>
-                        Desainer membutuhkan GPU yang kuat,
-                        sedangkan mahasiswa umumnya cukup
-                        menggunakan prosesor kelas menengah.
-                    </p>
-                </div>
-
-                <div class="guide-card">
-                    <div class="guide-icon">⚡</div>
-                    <h3>Prioritaskan RAM & SSD</h3>
-                    <p>
-                        Minimal RAM 8GB dan SSD 256GB agar
-                        laptop tetap responsif dan nyaman
-                        digunakan setiap hari.
-                    </p>
-                </div>
-
-                <div class="guide-card">
-                    <div class="guide-icon">🔋</div>
-                    <h3>Cek Daya Tahan Baterai</h3>
-                    <p>
-                        Untuk pelajar dan mahasiswa,
-                        pilih laptop dengan daya tahan
-                        minimal 6–8 jam.
-                    </p>
-                </div>
-
-                <div class="guide-card">
-                    <div class="guide-icon">📦</div>
-                    <h3>Garansi & After Sales</h3>
-                    <p>
-                        Pastikan layanan garansi resmi
-                        tersedia dan service center mudah
-                        ditemukan di kotamu.
-                    </p>
-                </div>
-
-                <div class="guide-card">
-                    <div class="guide-icon">📐</div>
-                    <h3>Pertimbangkan Berat & Ukuran</h3>
-                    <p>
-                        Laptop 14 inci dengan bobot di bawah
-                        1.5 kg lebih nyaman dibawa ke kampus
-                        atau tempat kerja setiap hari.
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-    </main>
-
-    <!-- BAGIAN FOOTER/BAWAH -->
-    <footer class="footer">
-
-        <div class="footer-container">
-
-            <div class="footer-brand">
-                <h3>findlap</h3>
-                <p>
-                    © 2025 findlap.
-                    Membantu kamu menemukan laptop impian
-                    sesuai kebutuhan dan budget.
-                </p>
-            </div>
-
-            <div class="footer-menu">
-                <a href="#katalog">Cari</a>
-                <a href="#guide">Tips</a>
-                <a href="tentang.html">Tentang</a>
-                <a href="kontak.html">Kontak</a>
-            </div>
-
-            <div class="footer-social">
-                <a href="#">📘</a>
-                <a href="#">📸</a>
-                <a href="#">▶️</a>
-            </div>
-
-        </div>
-
-    </footer>
-    <div id="modalOverlay" class="modal-overlay" onclick="closeModal(event)">
-        <div id="modalContent" class="modal-content"></div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Findlap beranda"><span class="brand-mark">F</span><span>find<span>lap</span></span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="mainNav" aria-label="Navigasi utama">
+        <a href="#katalog">Cari Laptop</a>
+        <a href="#promo">Promo Mingguan <span class="nav-new">Baru</span></a>
+        <a href="#guide">Tips Memilih</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="kontak.html">Hubungi</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-button" id="favoritesButton" type="button" aria-label="Buka laptop tersimpan">♡ <span id="favoriteCount">0</span></button>
+        <button class="icon-button compare-nav-button" id="compareNavButton" type="button" aria-label="Buka perbandingan">⇄ <span id="compareCount">0</span></button>
+        <a class="button button-dark nav-cta" href="#katalog">Mulai Cari <span>→</span></a>
+      </div>
     </div>
-    <script src="assets/script.js"></script>
-</body>
+  </header>
 
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> Diperbarui setiap minggu • Edisi Juli 2026</div>
+          <h1>Laptop tepat,<br><em>kuliah makin hebat.</em></h1>
+          <p class="hero-text">Temukan laptop yang cocok untuk belajar, bekerja, membuat karya, atau bermain—dengan rekomendasi yang mudah dipahami dan sesuai budget.</p>
+          <div class="hero-actions">
+            <a href="#katalog" class="button button-primary">Jelajahi katalog <span>→</span></a>
+            <a href="#finder" class="text-link">Bantu saya memilih <span>↗</span></a>
+          </div>
+          <div class="hero-proof"><div class="avatar-stack"><span>R</span><span>A</span><span>N</span><span>+</span></div><p><strong>50.000+</strong> orang sudah terbantu menemukan laptopnya</p></div>
+        </div>
+        <div class="hero-offer">
+          <div class="offer-top"><span class="offer-label">⚡ DEAL MINGGU INI</span><span class="offer-live">● LIVE</span></div>
+          <div class="offer-product"><div class="offer-image"><img src="assets/images/vivobooka14.jpg" alt="ASUS VivoBook 14"></div><div><p class="offer-brand">ASUS • FAVORIT MAHASISWA</p><h2>VivoBook 14</h2><p class="offer-spec">Core i5 · 8GB · 512GB SSD</p><div class="offer-price"><strong>Rp 7.499.000</strong><del>Rp 8.499.000</del></div></div></div>
+          <div class="offer-bottom"><div><small>Promo berakhir dalam</small><div class="countdown" id="countdown"><b>00</b><span>:</span><b>00</b><span>:</span><b>00</b></div></div><button type="button" class="button button-light" data-detail-id="1">Lihat deal <span>→</span></button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-strip"><div class="container stats-grid"><div><strong>18+</strong><span>model terkurasi</span></div><div><strong>6</strong><span>kategori kebutuhan</span></div><div><strong>4.8/5</strong><span>rating rekomendasi</span></div><div><strong>100%</strong><span>gratis digunakan</span></div></div></section>
+
+    <section class="promo-section section" id="promo">
+      <div class="container">
+        <div class="section-heading promo-heading"><div><span class="section-kicker">PROMO MINGGUAN</span><h2>Lebih hemat, lebih siap.</h2><p>Kode promo pilihan untuk menemani produktivitasmu minggu ini.</p></div><button class="outline-button" type="button" id="showPromoProducts">Lihat semua laptop promo <span>→</span></button></div>
+        <div class="promo-grid">
+          <article class="promo-card promo-green"><div class="promo-icon">🎓</div><div><span class="promo-tag">UNTUK PELAJAR</span><h3>Potongan Rp 300 ribu</h3><p>Min. transaksi Rp 6 juta</p><button type="button" class="coupon-button" data-coupon="PELAJAR300">Salin kode <strong>PELAJAR300</strong> ⧉</button></div></article>
+          <article class="promo-card promo-blue"><div class="promo-icon">💻</div><div><span class="promo-tag">KERJA & KULIAH</span><h3>Gratis ongkir pilihan</h3><p>Berlaku untuk laptop 14 inci</p><button type="button" class="coupon-button" data-coupon="GASPRODUKTIF">Salin kode <strong>GASPRODUKTIF</strong> ⧉</button></div></article>
+          <article class="promo-card promo-orange"><div class="promo-icon">🎮</div><div><span class="promo-tag">GAMING WEEK</span><h3>Cashback hingga 5%</h3><p>Untuk laptop gaming terpilih</p><button type="button" class="coupon-button" data-coupon="MAINHEMAT">Salin kode <strong>MAINHEMAT</strong> ⧉</button></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-section section" id="katalog">
+      <div class="container">
+        <div class="section-heading catalog-intro"><div><span class="section-kicker">KATALOG TERKURASI</span><h2>Pilih yang paling cocok untukmu</h2><p>Gunakan filter atau cari langsung berdasarkan nama, merek, dan spesifikasi.</p></div><div class="catalog-note"><span>✦</span><p><strong>Rekomendasi jujur</strong><br>tanpa dipengaruhi iklan</p></div></div>
+        <div class="catalog-layout">
+          <aside class="filter-panel" aria-label="Filter katalog">
+            <div class="filter-title"><h3>Filter laptop</h3><button type="button" id="resetFilters" class="reset-button">Reset</button></div>
+            <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Cari merek, model, CPU..." autocomplete="off"><button type="button" id="clearSearch" aria-label="Hapus pencarian">×</button></label>
+            <div class="filter-block"><div class="label-row"><label for="budgetSlider">Budget maksimal</label><strong id="budgetDisplay">Rp 15 jt</strong></div><input id="budgetSlider" type="range" min="3000000" max="30000000" step="500000" value="15000000"><div class="range-hints"><span>Rp 3 jt</span><span>Rp 30 jt</span></div></div>
+            <div class="filter-block"><label for="brandFilter">Merek</label><select id="brandFilter"><option value="">Semua merek</option><option>ASUS</option><option>Lenovo</option><option>HP</option><option>Acer</option><option>MSI</option><option>Dell</option></select></div>
+            <div class="filter-block"><label for="ramFilter">RAM minimum</label><select id="ramFilter"><option value="">Semua RAM</option><option value="8">8GB atau lebih</option><option value="16">16GB atau lebih</option><option value="32">32GB atau lebih</option></select></div>
+            <div class="filter-block"><div class="filter-label">Kebutuhan</div><div class="chip-list" id="useChips"><button type="button" class="chip" data-value="Tugas Harian">Tugas harian</button><button type="button" class="chip" data-value="Kuliah/Kerja">Kuliah / kerja</button><button type="button" class="chip" data-value="Programming">Programming</button><button type="button" class="chip" data-value="Desain/Video">Desain / video</button><button type="button" class="chip" data-value="Gaming">Gaming</button></div></div>
+            <div class="filter-block"><div class="filter-label">Ukuran layar</div><div class="chip-list" id="screenChips"><button type="button" class="chip" data-value="13">13–13.3”</button><button type="button" class="chip" data-value="14">14”</button><button type="button" class="chip" data-value="15.6">15.6”</button><button type="button" class="chip" data-value="16">16”</button></div></div>
+            <div class="filter-block"><div class="filter-label">Kategori</div><label class="check-row"><input type="checkbox" id="promoOnly"> <span>Hanya tampilkan promo</span></label></div>
+            <button type="button" class="button button-primary filter-submit" id="applyFilterButton">Tampilkan hasil <span>→</span></button>
+          </aside>
+          <div class="catalog-content"><div class="catalog-toolbar"><div><h3>Rekomendasi laptop</h3><p id="resultCount">Menampilkan 18 laptop</p></div><label class="sort-control"><span>Urutkan</span><select id="sortSelect"><option value="recommended">Paling relevan</option><option value="price-low">Harga terendah</option><option value="price-high">Harga tertinggi</option><option value="rating">Rating tertinggi</option><option value="name">Nama A–Z</option></select></label></div><div id="activeTags" class="active-tags"></div><div id="laptopGrid" class="laptop-grid"></div><div id="emptyset" class="empty-state" hidden><span>⌕</span><h3>Belum ada yang cocok</h3><p>Coba naikkan budget atau kurangi filter yang dipilih.</p><button type="button" class="outline-button" id="emptyReset">Reset semua filter</button></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="finder-section section" id="finder"><div class="container finder-grid"><div><span class="section-kicker">LAPTOP FINDER</span><h2>Masih bingung memilih?</h2><p>Jawab dua pertanyaan singkat. Findlap akan mencarikan rekomendasi paling masuk akal untukmu.</p><div class="finder-step"><span>1</span><div><strong>Budget kamu?</strong><div class="finder-options" id="finderBudget"><button type="button" data-value="7000000">≤ Rp 7 jt</button><button type="button" data-value="12000000">≤ Rp 12 jt</button><button type="button" data-value="20000000">≤ Rp 20 jt</button></div></div></div><div class="finder-step"><span>2</span><div><strong>Paling sering dipakai untuk?</strong><div class="finder-options" id="finderUse"><button type="button" data-value="Tugas Harian">Tugas / browsing</button><button type="button" data-value="Kuliah/Kerja">Kuliah / kerja</button><button type="button" data-value="Gaming">Gaming</button><button type="button" data-value="Desain/Video">Desain / video</button></div></div></div><button type="button" class="button button-dark finder-submit" id="finderSubmit">Tampilkan rekomendasi <span>→</span></button></div><div class="finder-result" id="finderResult"><div class="finder-result-placeholder"><span>✦</span><h3>Rekomendasi personalmu akan muncul di sini</h3><p>Pilih budget dan kebutuhan untuk mulai.</p></div></div></div></section>
+
+    <section class="guide-section section" id="guide"><div class="container"><div class="section-heading"><div><span class="section-kicker">PANDUAN PRAKTIS</span><h2>Checklist sebelum membeli</h2><p>Hal kecil yang sering terlupakan, padahal penting untuk pemakaian jangka panjang.</p></div><a class="text-link" href="tentang.html">Kenali Findlap <span>→</span></a></div><div class="guide-grid"><article class="guide-card"><span class="guide-number">01</span><span class="guide-icon">⚙</span><h3>Minimal 8GB + SSD</h3><p>RAM 8GB dan SSD membuat tugas, browser, serta aplikasi terasa lebih responsif.</p></article><article class="guide-card"><span class="guide-number">02</span><span class="guide-icon">◒</span><h3>Sesuaikan prosesor</h3><p>Core i5 atau Ryzen 5 ideal untuk multitasking. Untuk gaming dan editing, perhatikan GPU.</p></article><article class="guide-card"><span class="guide-number">03</span><span class="guide-icon">⌁</span><h3>Periksa mobilitas</h3><p>Laptop 14 inci dan baterai 6–8 jam lebih nyaman dibawa ke kampus setiap hari.</p></article><article class="guide-card"><span class="guide-number">04</span><span class="guide-icon">✓</span><h3>Cek garansi resmi</h3><p>Pastikan garansi dan service center tersedia agar lebih tenang setelah pembelian.</p></article></div></div></section>
+
+    <section class="newsletter-section"><div class="container newsletter-card"><div><span class="section-kicker">UPDATE HARGA & PROMO</span><h2>Jangan lewatkan deal terbaik.</h2><p>Dapatkan ringkasan promo mingguan Findlap langsung ke emailmu.</p></div><form id="newsletterForm" class="newsletter-form"><label class="sr-only" for="newsletterEmail">Email</label><input id="newsletterEmail" type="email" placeholder="email kamu" required><button class="button button-primary" type="submit">Berlangganan <span>→</span></button><small>Tanpa spam. Berhenti kapan saja.</small></form></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand brand-footer" href="index.html"><span class="brand-mark">F</span><span>find<span>lap</span></span></a><p>Teman memilih laptop yang lebih tepat,<br>tanpa bikin pusing.</p></div><div><h4>Jelajahi</h4><a href="#katalog">Katalog laptop</a><a href="#promo">Promo mingguan</a><a href="#guide">Tips memilih</a></div><div><h4>Findlap</h4><a href="tentang.html">Tentang kami</a><a href="kontak.html">Hubungi kami</a><a href="#finder">Laptop finder</a></div><div><h4>Ikuti kami</h4><div class="social-links"><a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">ig</a><a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="Youtube">yt</a><a href="https://github.com" target="_blank" rel="noreferrer" aria-label="Github">gh</a></div><p class="footer-small">© 2026 findlap. Dibuat untuk membantu.</p></div></div></footer>
+
+  <div class="compare-dock" id="compareDock" hidden><div class="container compare-dock-inner"><div><strong>Bandingkan laptop</strong><span id="compareHint"> Pilih hingga 3 laptop</span></div><div id="compareMiniList" class="compare-mini-list"></div><button type="button" class="button button-dark" id="compareButton" disabled>Bandingkan sekarang <span>→</span></button><button type="button" class="dock-close" id="clearCompare" aria-label="Hapus semua pilihan">×</button></div></div>
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Detail laptop"><div class="modal-card" id="modalContent"></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="assets/js/script.js"></script>
+</body>
 </html>
